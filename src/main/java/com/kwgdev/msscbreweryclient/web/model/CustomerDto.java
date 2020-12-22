@@ -1,4 +1,4 @@
-package com.kwgdev.msscbreweryclient.model;
+package com.kwgdev.msscbreweryclient.web.model;
 
 /**
  * created by kw on 12/17/2020 @ 4:51 PM

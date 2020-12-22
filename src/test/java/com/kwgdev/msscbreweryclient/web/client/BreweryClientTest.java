@@ -4,8 +4,7 @@ package com.kwgdev.msscbreweryclient.web.client;
  * created by kw on 12/17/2020 @ 4:53 PM
  */
 
-import com.kwgdev.msscbreweryclient.model.BeerDto;
-import com.kwgdev.msscbreweryclient.web.BreweryClient;
+import com.kwgdev.msscbreweryclient.web.model.BeerDto;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -48,5 +47,10 @@ class BreweryClientTest {
         BeerDto beerDto = BeerDto.builder().beerName("New Beer").build();
 
         client.updateBeer(UUID.randomUUID(), beerDto);
+    }
+
+    @Test
+    void testDeleteBeer() {
+        client.deleteBeer(UUID.randomUUID());
     }
 }

@@ -1,9 +1,9 @@
-package com.kwgdev.msscbreweryclient.web;
+package com.kwgdev.msscbreweryclient.web.client;
 
 /**
  * created by kw on 12/17/2020 @ 4:50 PM
  */
-import com.kwgdev.msscbreweryclient.model.BeerDto;
+import com.kwgdev.msscbreweryclient.web.model.BeerDto;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Component;
@@ -43,6 +43,11 @@ public class BreweryClient {
     // HTTP PUT
     public void updateBeer(UUID uuid, BeerDto beerDto) {
         restTemplate.put(apihost + BEER_PATH_V1 + "/" + uuid.toString(), beerDto);
+    }
+
+    // HTTP DELETE
+    public void deleteBeer(UUID uuid) {
+        restTemplate.delete(apihost + BEER_PATH_V1 + "/" + uuid.toString());
     }
 
     public void setApihost(String apihost) {
